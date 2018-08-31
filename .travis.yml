@@ -1,0 +1,10 @@
+language: java
+
+before_install:
+- pip install --user awscli
+- export PATH=$PATH:$HOME/.local/bin
+
+install:
+  - gradle shadowJar
+
+script: "./upload-function.sh"
